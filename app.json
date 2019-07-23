@@ -1,0 +1,37 @@
+{
+  "pages":[
+      "pages/person/person",
+    "pages/home/home",
+    "pages/newQ/newQ",
+  
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundColor": "#eee",
+    "navigationBarBackgroundColor": "#1E90FF",
+    "navigationBarTitleText": "垃圾收一收",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#599fff",
+    "borderStyle": "white",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/newQ/newQ",
+        "text": "发布问题" 
+      },
+       
+        
+      {
+        "pagePath": "pages/person/person",
+        "text": "我的"
+      }
+    ]
+  }
+}
