@@ -1,4 +1,4 @@
-<view>
-<swiper>
-</swiper>
-</view>
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">导航栏</view>
+</cu-custom>
