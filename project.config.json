@@ -17,7 +17,8 @@
 	"appid": "wx04c101ef66eb6f27",
 	"projectname": "OneQuestion",
 	"debugOptions": {
-		"hidedInDevtools": []
+		"hidedInDevtools": []   
+
 	},
 	"isGameTourist": false,
 	"simulatorType": "wechat",
