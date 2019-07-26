@@ -9,7 +9,7 @@
 	</view> 
  
   <view class="profile-wrapper" catchtap="loadProfile">
-		<block wx:for="{{myProfile}}" >
+		<block wx:for="{{myProfile}}" wx:key="key" >
 			<view class="profile" id="{{item.id}}">
 				<view class="profile-item"> {{item.desc}} </view>
 				<image class="profile-arrow" src="/images/arrow.png"></image>
@@ -17,7 +17,7 @@
 		</block>
 	</view>
 	<view class="account-wrapper">
-		<view class="account" wx:for="{{myAccount}}">
+		<view class="account" wx:for="{{myAccount}}" wx:key="key">  
 			<view class="account-item"> {{item}} </view>
 			<image class="account-arrow" src="/images/arrow.png"></image>
 		</view>
