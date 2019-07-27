@@ -10,9 +10,9 @@
   position: relative;
   flex-direction: column;
   align-items: center;
-  color: #fff;
+  color: #fff; 
   font-weight: 300;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 3px rgba(64, 29, 190, 0.3);
 }
 
 .UCenter-bg .gif-wave{
@@ -41,7 +41,8 @@
 
 .userinfo-nickname {
     margin: 20rpx;
-    color: #300e0e;
+    font-size: 30rpx;
+    color: #fff;
 }
 
 .userinfo-dig {
@@ -54,8 +55,8 @@
 }
 
 .userinfo-desc {
-    color: #bbb;
-    font-size: 14rpx;
+    color:gray;
+    font-size: 22rpx;
     margin-bottom: 20rpx;
 }
 
@@ -84,4 +85,7 @@
 
 .btn-quit {
     margin: 15rpx;
+}
+.hidden_btn{
+    display: none;
 }

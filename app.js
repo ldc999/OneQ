@@ -8,7 +8,7 @@ App({
   },
   onLaunch: function () {
     try {
-     // wx.clearStorageSync();
+      wx.clearStorageSync();
       wx.getSystemInfo({
         success: e => {
           this.globalData.StatusBar = e.statusBarHeight;
@@ -26,19 +26,21 @@ App({
     } else {
       //调用登录接口
       wx.login({ 
-        success: res => {
-          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        success: function (res) {
           if (res.code) { 
+            console.log('获取用户登录成功！' )
             wx.getUserInfo({
-              success: function (resS) {
-                that.globalData.userInfo = resS.userInfo ;
-              typeof cb == "function" && cb(that.globalData.userInfo)  
-              }
+            success: function (ress) {
+              that.globalData.userInfo = ress.userInfo ;
+            typeof cb == "function" && cb(that.globalData.userInfo) 
+            }
             })
-          }
+            } else {
+            console.log('获取用户登录态失败！' + res.errMsg)
         }
-      })
-    }
+      }
+    })
+  } 
   },
   globalData: {
     userInfo: null

@@ -1,6 +1,8 @@
 {
+  "navigationStyle": "custom",
   "usingComponents": {
-      "home": "/pages/home/home", 
-      "person": "/pages/person/person"
+    "page": "../component/Page/Page",
+    "home": "../pages/home/home", 
+    "person": "../pages/person/person"
   }
 }

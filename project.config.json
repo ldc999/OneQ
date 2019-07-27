@@ -14,11 +14,10 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.7",
-	"appid": "wx04c101ef66eb6f27",
+	"appid": "wx69e9532b362abb04",
 	"projectname": "OneQuestion",
 	"debugOptions": {
-		"hidedInDevtools": []   
-
+		"hidedInDevtools": []
 	},
 	"isGameTourist": false,
 	"simulatorType": "wechat",

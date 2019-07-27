@@ -3,7 +3,7 @@
 	<view class="UCenter-bg">
 		<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
 			<text class="userinfo-nickname">{{userInfo.nickName}}</text>
-		<view class="userinfo-dig">开通我的「垃圾收一收」</view>
+		<button class="{{hidden ? 'hidden_btn' : 'userinfo-dig'}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="myGetuserinfo">登录我的垃圾收一收」</button>
 		<text class="userinfo-desc">收入90%归你，每晚结算，自动入库微信钱包</text>
        <image src="/images/wave.gif" mode="scaleToFill" class="gif-wave"></image>
 	</view> 

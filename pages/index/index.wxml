@@ -1,26 +1,7 @@
-<home wx:if="{{PageCur=='home'}}"></home>
-<person wx:if="{{PageCur=='person'}}"></person> 
-<view class="cu-bar tabbar bg-white shadow foot">
-    <view class="action">
-      <view class="cuIcon-homefill"></view> 首页
-    </view>
-    <view class="action ">
-      <view class="cuIcon-similar"></view> 分类
-    </view>
-    <view class="action text-gray add-action">
-      <button class="cu-btn cuIcon-add bg-green shadow"></button>
-      发布
-    </view>
-    <view class="action ">
-      <view class="cuIcon-cart">
-        <view class="cu-tag badge">99</view>
-      </view>
-      购物车
-    </view>
-    <view class="action text-green" bindtap="NavChange" data-cur="person">
-      <view class="cuIcon-my">
-        <view class="cu-tag badge"></view>
-      </view>
-      我的
-    </view>
-  </view>
+<page id="page1" customTitleBar="{{true}}"  customTabbar="{{true}}" titleBarOptions="{{titleBarOptions}}" tabBarOptions="{{tabBarOptions}}" >
+  <home slot="home"></home>
+  <person slot="person"></person>  
+  <component1 slot="com1"></component1>
+  <component2 slot="com2"></component2>
+
+</page>
