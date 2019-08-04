@@ -1,7 +1,39 @@
-<page id="page1" customTitleBar="{{true}}"  customTabbar="{{true}}" titleBarOptions="{{titleBarOptions}}" tabBarOptions="{{tabBarOptions}}" >
-  <home slot="home"></home>
-  <person slot="person"></person>  
-  <component1 slot="com1"></component1>
-  <component2 slot="com2"></component2>
+<!-- 组件显示 -->
+<view hidden="{{currentTab == 0? false: true}}">
+  <home/>
+</view>
+<view hidden="{{currentTab == 1? false: true}}">
+  <component_car/>
+</view>
+<!-- <view hidden="{{currentTab == 2? false: true}}">
+  <person/>
+</view> -->
+<view wx:if="{{currentTab == 2}}">
+  <person/>
+</view>
 
-</page>
+<!-- 自定义 tabbar -->
+<!-- <view class="cu-bar tabbar bg-white shadow foot"> -->
+<!-- <view class="cu-bar tabbar bg-white shadow foot">
+  <view   wx:for="{{items}}" wx:key="prototype" wx:for-index="idx" wx:for-item="item" data-current="{{idx}}" class="{{currentTab == idx?'action text-green':'action text-gray'}}" bindtap="swichNav" >
+    <view wx:for-index="idx" data-current="{{idx}}" class="{{item.icon}}" > 
+    </view>
+    {{item.text}}
+  </view> -->
+ <view class="cu-bar tabbar bg-white shadow foot">
+    <view class="{{currentTab=='0'?'action text-green':'action text-gray'}}" bindtap="swichNav" data-current="0">
+      <view class="cuIcon-homefill"></view> 首页
+    </view>
+    <view class="action text-gray add-action">
+      <button class="cu-btn cuIcon-add bg-green shadow"></button>
+      发布
+    </view>
+
+    <view class="action" bindtap="swichNav" data-current="2">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/about{{currentTab=='2'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{currentTab=='2'?'text-green':'text-gray'}}">我的</view>
+  </view>
+  </view>
+

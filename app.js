@@ -11,6 +11,16 @@ App({
       wx.clearStorageSync();
       wx.getSystemInfo({
         success: e => {
+          this.globalData.systemInfo = e;
+          //	//判断机型(适配iphoneX)
+          if (e.model.search('iPhone X') != -1) {
+            this.globalData.isIphoneX = true
+            console.log('Your phone is iphone x');
+          }
+          if (e.model.search('iPhone') != -1) {
+            this.globalData.isIphone = true
+            console.log('Your phone is iphone ');
+          }
           this.globalData.StatusBar = e.statusBarHeight;
           let custom = wx.getMenuButtonBoundingClientRect();
           this.globalData.Custom = custom;
@@ -43,6 +53,10 @@ App({
   } 
   },
   globalData: {
-    userInfo: null
+    systemInfo: null,
+    userInfo: null,
+    version: "1.0.0",
+    isIphoneX: false,
+    isIphone:false
   }
 })

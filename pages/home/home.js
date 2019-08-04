@@ -70,6 +70,7 @@ Component({
     this.setData({
       cardCur: e.detail.current
     })
-   }
+   },
+    lineschange: function () { },
   }
 })

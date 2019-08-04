@@ -10,12 +10,17 @@ Component({
     myAccount: ["手机号码", "帮助", "结算说明", "关于一问十答"]
   },
   attached() {
-    var that = this
+    let that = this;
+    wx.showLoading({
+      title: '数据加载中',
+      mask: true,
+    }) 
     console.log("myperson page userInfo "+this.data.userInfo) 
     if (app.globalData.userInfo){
       that.setData({
         userInfo: app.globalData.userInfo
        })
+      wx.hideLoading()
        return; 
     }
     // 查看是否授权 
@@ -30,9 +35,20 @@ Component({
           }) 
         }   
       }
-    })
+    }),
+    wx.hideLoading()
   },
   methods:{
+    onPullDownRefresh: function (event) {
+      //此处可实现下拉刷新数据，刷新完数据最好  wx.stopPullDownRefresh()；
+      console.log('onPullDownRefresh');
+    },
+    scrollUpper(){
+      console.log('触发顶部');
+      wx.showToast({
+        title: '触发顶部',
+      })
+    },
     myGetuserinfo(){
       var that = this
       if (!app.globalData.userInfo){

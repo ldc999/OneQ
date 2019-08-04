@@ -1,5 +1,5 @@
 <!--pages/person/person.wxml-->
-<view> 
+<scroll-view scroll-y class="scrollPage">
 	<view class="UCenter-bg">
 		<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
 			<text class="userinfo-nickname">{{userInfo.nickName}}</text>
@@ -22,4 +22,10 @@
 			<image class="account-arrow" src="/images/arrow.png"></image>
 		</view>
 	</view>
-</view>
+  <view class="account-wrapper">
+		<view class="account" wx:for="{{myAccount}}" wx:key="key">  
+			<view class="account-item"> {{item}} </view>
+			<image class="account-arrow" src="/images/arrow.png"></image>
+		</view>
+	</view>
+</scroll-view>
