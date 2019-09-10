@@ -39,9 +39,12 @@ App({
         success: function (res) {
           if (res.code) { 
             console.log('获取用户登录成功！' )
+           
             wx.getUserInfo({
             success: function (ress) {
               that.globalData.userInfo = ress.userInfo ;
+              console.log(ress.userInfo)
+              console.log('code ' + ress.userInfo.code)
             typeof cb == "function" && cb(that.globalData.userInfo) 
             }
             })

@@ -34,7 +34,7 @@
 			</view>
 			<view wx:if="{{listCount !== 0}}" class="scroll__bottom">
 				<view class="scroll__loading" wx:if="{{end}}">
-					<view class="text">已全部加载</view>
+					<view class="text">{{endText}}</view>
 				</view>
 				<view class="scroll__loading" wx:else>
 					<view class="la-line-spin-fade-rotating">

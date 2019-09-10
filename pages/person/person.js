@@ -1,9 +1,27 @@
 var app = getApp()
+let pageStart = 0;
+let pageSize = 15;
 Component({
   options: {
     addGlobalClass: true,
   },
   data: {
+    isIphoneX: app.globalData.isIphoneX,
+    requesting: false,
+    end: false,
+    endText:'我也是有底线的',
+    page: 0,
+    listData: [100], 
+    refreshSize: 90,
+    bottomSize:0,
+    color: "#ff4158",
+    items: [
+      { name: 'red', value: '#ff4158', checked: 'true' },
+      { name: 'black', value: '#003333' },
+      { name: 'green', value: '#00FF33' },
+      { name: 'yellow', value: '#CCFF00' },
+    ],
+    empty: false,
     userInfo:null,
     hidden: true,
     myProfile: [{ "desc": "我的等级", "id": "coin" }, { "desc": "我问的", "id": "myQues" }, { "desc": "我回答的", "id": "myHeared" }],
@@ -39,14 +57,39 @@ Component({
     wx.hideLoading()
   },
   methods:{
-    onPullDownRefresh: function (event) {
-      //此处可实现下拉刷新数据，刷新完数据最好  wx.stopPullDownRefresh()；
-      console.log('onPullDownRefresh');
+    getList(type, currentPage) {
+      console.log(this.data.endText)
+      this.setData({
+        requesting: true
+      })
+
+      wx.showNavigationBarLoading()
+
+      setTimeout(() => {
+        this.setData({
+          requesting: false
+        })
+
+        wx.hideNavigationBarLoading()
+        console.log(this.data.endText)
+        if (type === 'refresh') {
+          this.setData({ 
+           // page: currentPage + 1
+          })
+        } else {
+          this.setData({ 
+            end: true
+          })
+        }
+
+      }, 1000)
+
     },
-    scrollUpper(){
-      console.log('触发顶部');
-      wx.showToast({
-        title: '触发顶部',
+    // 刷新数据
+    refresh() {
+      this.getList('refresh', 0);
+      this.setData({
+        empty: false
       })
     },
     myGetuserinfo(){

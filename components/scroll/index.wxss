@@ -1,4 +1,3 @@
-@charset "UTF-8";
 movable-area {
   width: 100%;
   height: 100vh;
@@ -86,12 +85,12 @@ movable-area {
   text-align: center;
   color: #999999;
 }
-.scroll__bottom > .scroll__text {
+.scroll__bottom > .scroll__loading > .scroll__text {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* start: 刷新动画 */
+/* start: refresh */
 .la-square-jelly-box, .la-square-jelly-box > view {
   position: relative;
   box-sizing: border-box;
@@ -159,8 +158,8 @@ movable-area {
     transform: translateY(0) rotate(90deg);
   }
 }
-/* end: 刷新动画 */
-/* start: 加载动画 */
+/* end: refresh */
+/* start: more */
 .la-line-spin-fade-rotating, .la-line-spin-fade-rotating > view {
   position: relative;
   box-sizing: border-box;
@@ -254,18 +253,6 @@ movable-area {
   animation-delay: -2s;
 }
 
-.la-line-spin-fade.la-sm {
-  width: 16px;
-  height: 16px;
-}
-
-.la-line-spin-fade.la-sm > div {
-  width: 1px;
-  height: 4px;
-  margin-top: -2px;
-  margin-left: 0;
-}
-
 @keyframes ball-spin-fade-rotating-rotate {
   100% {
     transform: rotate(360deg);
@@ -279,4 +266,4 @@ movable-area {
     opacity: 1;
   }
 }
-/* end: 加载动画 */
+/* end: more */
